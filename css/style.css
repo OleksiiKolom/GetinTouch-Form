@@ -1,0 +1,275 @@
+/* Обнулюючий стиль */
+*{padding: 0;margin: 0;border: 0;}
+*, *:before, *:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus, :active{outline: none;}
+a:focus, a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html, body{height: 100%;width: 100%;font-size: 100%;line-height: 1;font-style: 14px;-ms-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input, button, textarea{font-family: inherit;}
+input::-ms-clear{display:none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style-type: none;}
+img{vertical-align: top;}
+h1, h2, h3, h4, h5, h6{font-size: inherit; font-weight: 400;}
+
+/*___________________________________________________________________*/
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #F5F5F5;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: clip;
+}
+
+/*___________________________________________________________________*/
+
+[class*="__container"] {
+    max-width: 1470px;
+    padding: 0px 15px;
+    margin: 0px auto;
+}
+
+.page {
+    flex: 1 1 auto;
+    background: url('../img/bg.jpg') center / cover no-repeat;
+}
+.page__container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.contacts {
+    background-color: #FFF;
+    border-radius: 50px;
+    box-shadow: 0px 141px 200px -80px rgba(25, 58, 75, 0.30);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    padding: 100px 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 767.98px) {
+    .contacts::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 29%;
+        background-color: #183A4A;
+    }
+    .contacts__content {
+        padding-top: 48px;
+        padding-bottom: 48px;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+/*___________________________________________________________________*/
+
+/* Стилі для основного (лівого блоку) */
+
+/* Стилі для заголовка */
+.contacts__title {
+    font-size: 54px;
+    font-weight: 700;
+}
+.contacts__title:not(:last-child) {
+    margin-bottom: 20px;
+}
+.contacts__title span {
+    color: #DD5471;
+}
+
+/* Стилі для текста */
+.contacts__text {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.14px;
+}
+.contacts__text:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.contacts__form:not(:last-child) {
+    margin-bottom: 60px;
+}
+
+/*___________________________________________________________________*/
+
+/* Стилі для форми, та її елементів*/
+
+.form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Поле форми */
+.form__line {
+    position: relative;
+}
+
+/* Поле для вводу */
+.form__input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #E0E0E0;
+    border-radius: 0 !important;
+    padding: 0px 20px;
+}
+
+.form__input:focus + .form__label {
+    opacity: 0;
+}
+
+/* Підскаска поля вводу */
+.form__label {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    pointer-events: none;
+    transition: opacity 0.3s;
+    color: #828282;
+    font-size: 14px;
+    letter-spacing: 0.14px;
+}
+.form__label span {
+    color:#DD5471;
+}
+
+.form__button {
+    background-color: #DD5471;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 15px 24px;
+}
+
+/* Стилі для блока контакти */
+.info-contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.info-contacts__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-contacts__icon {
+    flex: 0 0 28px;
+    align-self: center;
+}
+
+.info-contacts__body {
+    flex: 1 0 auto;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+.info-contacts__title {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.info-contacts__title:not(:last-child) {
+    margin-bottom: 1px;
+}
+
+.info-contacts__value {
+    font-weight: 400;
+    color: #DD5471;
+}
+
+/*___________________________________________________________________*/
+
+/* Стилі для блока з картою */
+
+.contacts__map {
+    position: relative;
+    z-index: 2;
+}
+
+.contacts__map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1470px) {
+    .contacts {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .contacts {
+        border-radius: 30px;
+        padding: 30px;
+        gap: 20px;
+    }
+    .contacts__title {
+        font-size: 44px;
+    }
+    .contacts__title:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .contacts__form:not(:last-child) {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contacts {
+        border-radius: 0px;
+        padding: 30px 15px;
+        margin: 0px -15px;
+        grid-template-columns: auto;
+    }
+    .contacts__title {
+        font-size: 34px;
+    }
+    .contacts__text:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .contacts__form:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .contacts__map {
+        padding-bottom: 120%;
+    }
+}
